@@ -1,10 +1,9 @@
 import React from "react";
 import User from "./user";
 
-const fetchUserData = async (matricNumber: string, department:string) => {
+const fetchUserData = async (matricNumber: string) => {
   return {
     matricNumber,
-    department,
   };
 };
 
@@ -13,12 +12,12 @@ const Page = async ({
 }: {
   params: {
     matricNumber: string;
-    department: string;
+   
   };
 }) => {
   // Do your auth checks above here
 
-  const userData = await fetchUserData(params.matricNumber, params.department);
+  const userData = await fetchUserData(params.matricNumber);
 
   return <User userData={userData} />;
 };

@@ -12,7 +12,9 @@ function ReviewAllocation() {
   
   return (
     <div className={s.wrapper}>
-      <h1>Student Application Details</h1>
+      <h1>Student Application Details
+        
+      </h1>
 
       <div className={s.applicationInfo}>
         <AvatarIcon />

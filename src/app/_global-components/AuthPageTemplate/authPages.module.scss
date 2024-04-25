@@ -1,0 +1,37 @@
+@import "../../../base-styles/index";
+
+.wrapper {
+  height: 100%;
+  .container {
+    margin-right: 2rem;
+    height: 100%;
+
+    .authBg {
+      position: fixed;
+      top: 0;
+      width: 36.5rem;
+      height: 100%;
+      max-height: 154rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 4.8rem;
+      background-color: $primary-color;
+
+      @include desktop(1290px) {
+        width: 56.5rem;
+      }
+      
+    }
+
+    .pageContent {
+      padding-left: 36.5rem;
+      margin-left: 10rem;
+    
+
+      @include desktop(1290px) {
+        padding-left: 56.5rem;
+        margin-left: 22rem;
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
 /* 
-This is the single entry point used in all feature folder with an scss file. Please Note that absolute import alias is enabled for this file in the `next.config.js`. This is what makes a single `@import "index.scss";` possible in all scss files in a feature folder. 
+This is the single entry point used in all feature folder with an scss file. Please Note that absolute import alias is enabled for this file in the `next.config.js`. This is what makes a single `@import ""../../../../base-styles/index";";` possible in all scss files in a feature folder. 
 */
 
 
 @use "sass:math";
-@import "./_color.scss";
-@import "./_variable.scss";
-@import "./_breakPoint.scss";
-@import "./_functions.scss";
+@import "./_color";
+@import "./_variable";
+@import "./breakpoint";
+@import "./_functions";
 // @import "./_theme.scss";
-@import "./_spacing.scss";
-@import "./_mixinConstant.scss";
+@import "./_spacing";
+@import "./_mixinConstant";

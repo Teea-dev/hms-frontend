@@ -1,6 +1,6 @@
 "use client";
 import React, { useCallback, useMemo } from "react";
-import s from "./defaultLayoutNavbar.module.scss";
+import s from "./defaultLayoutNavBar.module.scss";
 import cn from "clsx";
 
 import NextImageShimmer from "../NextImageShimmer";

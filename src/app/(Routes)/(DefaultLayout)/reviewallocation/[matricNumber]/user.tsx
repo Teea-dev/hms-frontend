@@ -15,10 +15,9 @@ const User = ({
 }: {
   userData: {
     matricNumber: string;
-    department: string;
   };
 }) => {
-  const { matricNumber,department } = userData;
+  const { matricNumber } = userData;
   console.log(userData)
   const [modal1Open, setModal1Open] = useState(false);
   const [modal2Open, setModal2Open] = useState(false);
@@ -37,7 +36,7 @@ const User = ({
           </div>
           <div>
             <p>Department</p>
-            <h5> {department}</h5>
+            <h5> Computer Science</h5>
           </div>
           <div>
             <p>Disability</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./StatSection.module.scss";
+import s from "./statSection.module.scss";
 
 function StatSection() {
   return (

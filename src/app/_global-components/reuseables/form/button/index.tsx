@@ -2,7 +2,7 @@ import React, { ComponentPropsWithRef } from "react";
 import s from "./button.module.scss";
 import { Button as AntdButton, ConfigProvider } from "antd";
 import cn from 'clsx'
-import themeColors from '@/base-styles/_exportValues.module.scss'
+import themeColors from '../../../../../base-styles/_exportValues.module.scss'
 
 interface PropsTypes extends ComponentPropsWithRef<typeof AntdButton> {
   themeType?: "primary" | "dynamic";

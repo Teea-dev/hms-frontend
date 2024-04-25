@@ -1,0 +1,77 @@
+@import "../../../../../base-styles/index";
+
+.wrapper {
+  margin: 4.8rem 0px;
+ justify-content: center;
+  display: flex;
+ flex-direction: column;
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: $black;
+    margin-bottom: 23.4rem;
+    gap: 1rem;
+    .signUp {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+
+  .formWrapper {
+    max-width: 48rem;
+    .header{
+
+        h2 {
+          margin-bottom: 1.8rem;
+          @include text-heading-2;
+          display: flex;
+         justify-content: center;
+        }
+        p{
+            font-weight: 400;
+            @include text-body-2;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4.8rem;
+        }
+    }
+
+    form {
+      .inputContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+      }
+
+      a {
+        color: $primary-color;
+        font-weight: 500;
+        text-decoration: none;
+       
+        display: inline-block;
+        @include text-links-small;
+      }
+
+      .signInBtn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: white;
+        margin-top: 2.4rem;
+        margin-bottom: 3.2rem;
+        @include text-links-medium;
+      }
+    }
+  }
+
+  .footerInfo {
+    max-width: 48rem;
+    display: flex;
+    justify-content: center;
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+}

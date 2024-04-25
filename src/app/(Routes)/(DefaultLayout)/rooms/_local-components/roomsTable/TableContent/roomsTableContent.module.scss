@@ -1,5 +1,4 @@
-@import '../../../../../../../../base-styles/index';
-
+@import '../../../../../../../base-styles/index';
 
 .status {
   display: flex;
@@ -8,14 +7,14 @@
   border-radius: 0.8rem;
   padding: 0.5rem;
   @include text-body-5;
-  &.completed {
+  &.occupied {
     background-color: $secondary-color-700;
     color: #00c566;
     width: fit-content;
     @include text-body-5;
 
   }
-  &.pending {
+  &.partllyOccupied {
     background-color: $secondary-color-300;
     color: #f5b43d;
     @include text-body-5;
@@ -31,7 +30,7 @@
     @include text-body-5;
 
   }
-  &.declined {
+  &.empty {
     background-color: $secondary-color-400;
     color: #ff784b;
     width: fit-content;
@@ -89,3 +88,23 @@
 .seeMoreIcon {
   cursor: pointer;
 }
+.header{
+    h3{
+        font-weight: 600;
+        @include text-heading-4;
+        margin-bottom: 3.2rem;
+        margin-top: 6.4rem;
+    }
+    .selectFields{
+        display: flex;
+        gap: 1.6rem;
+        .selectWrapper{
+            background-color: #F4F4F5;
+            border-radius: 0.8rem;
+            // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+            // border: 1px solid #dcdcdc;
+            width: fit-content;
+        }
+    }
+}
+
