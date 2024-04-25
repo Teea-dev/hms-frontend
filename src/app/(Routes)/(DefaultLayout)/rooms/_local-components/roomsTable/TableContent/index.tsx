@@ -131,7 +131,7 @@ function RoomsTableContent() {
   return (
     <>
       <div className={s.header}>
-        <h3>Roomss</h3>
+        <h3>Rooms</h3>
         <div className={s.selectFields}>
           <SelectField
             wrapperClassname={s.selectWrapper}
