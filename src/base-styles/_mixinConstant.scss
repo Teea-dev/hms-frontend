@@ -1,0 +1,223 @@
+// Maximum Width that wraps each section
+@mixin app-max-width($size: 1440px) {
+    max-width: $size;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* 
+  -- Description --
+  Creates a custom scroll bar for a particular section where this mixin is used
+  
+  --Parameters Types--
+  $scrollbar-width: Values for the width of the scrollBar
+  $scrollbar-height: Values for the width of the scrollBar
+  $track-border-radius: Border radius for the scrollbar
+  $thumb-border-radius: Border radius for the scrollbar thumb
+  */
+  @mixin custom-scrollbar(
+    $scrollbar-width: 8px,
+    $scrollbar-height: $scrollbar-width,
+    $track-border-radius: $scrollbar-width,
+    $thumb-border-radius: $scrollbar-width
+  ) {
+    /* width */
+    &::-webkit-scrollbar {
+      height: $scrollbar-height;
+      width: $scrollbar-width;
+    }
+  
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: $track-border-radius;
+    }
+  
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $neutral-grey-300;
+      border-radius: $thumb-border-radius;
+    }
+  
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $neutral-grey-400;
+    }
+  }
+  
+  /* 
+  -- Description --
+  A Function that takes in a css property and pixel value and return the css property to have a vw value that's relative to the pixel value that was passed and also clamps it.
+  
+  Note: *mobile-vw* takes in the mobilePixel and returns vw value relative to the mobilePixel. Math ==> $mobilePixel * 100vw / $base-vw. Check "_function.scss" file
+  
+  Note: *desktop-vw* takes in the desktopPixel and returns vw value relative to the desktopPixel. Math ==> $desktopPixel * 100vw / $base-vw. Check "_function.scss" file
+  
+  --Parameters Types--
+  $property: This is any css property whose value can be in px E.g padding, margin;
+  $mobilePixel: What pixel value you what the $property to have on mobile screens;
+  $desktopPixel: What pixel value you what the $property to have on desktop screens;
+  $important: Css "!important" value  ;
+  */
+  
+  @mixin grow-with-vw(
+    $property,
+    $mobilePixel,
+    $desktopPixel: $mobilePixel,
+    $important: ""
+  ) {
+    #{$property}: mobile-vw($mobilePixel) #{$important};
+  
+    @include clamp-screen($mobile-width, 800px) {
+      #{$property}: $mobilePixel #{$important};
+    }
+  
+    @include desktop {
+      #{$property}: desktop-vw($desktopPixel) #{$important};
+    }
+  
+    @include desktop($desktop-width + 1px) {
+      #{$property}: $desktopPixel #{$important};
+    }
+  }
+  
+  /* 
+  This uses the same pattern with "grow-with-vw" only it uses vh and not vw
+  */
+  
+  @mixin grow-with-vh(
+    $property,
+    $mobilePixel,
+    $desktopPixel: $mobilePixel,
+    $important: ""
+  ) {
+    #{$property}: mobile-vh($mobilePixel) #{$important};
+  
+    @include clamp-screen($mobile-width, 800px) {
+      #{$property}: $mobilePixel #{$important};
+    }
+  
+    @include desktop {
+      #{$property}: desktop-vh($desktopPixel) #{$important};
+    }
+  
+    @include desktop($desktop-width + 1px) {
+      #{$property}: $desktopPixel #{$important};
+    }
+  }
+  
+  /* 
+  -- Description --
+  This function helps to truncate a multiple line into the numbers of lines you need e.g truncate 5 lines to 2
+  
+  --Parameters Types--
+  $lineNum: Number of lines you want the paragraph. Defaults 2
+  */
+  @mixin truncate-text($lineNum: 2) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineNum; /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap; /* let the text wrap preserving spaces */
+  }
+  
+  /* 
+  Font Size Constants Mixins
+  */
+  @mixin text-heading-1 {
+    font-size: 3.6rem;
+    line-height: 3.9rem;
+    @include desktop {
+      font-size: 5.6rem;
+      line-height: 6.7rem;
+    }
+  }
+  
+  @mixin text-heading-2 {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    @include desktop {
+      font-size: 4.8rem;
+      line-height: 5.2rem;
+    }
+  }
+  @mixin text-heading-3 {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    @include desktop {
+      font-size: 3.2rem;
+      line-height: 4.365rem;
+    }
+  }
+  @mixin text-heading-4 {
+    font-size: 1.8rem;
+    line-height: 1.9rem;
+    @include desktop {
+      font-size: 2.4rem;
+      line-height: 2.7rem;
+    }
+  }
+  @mixin text-heading-5 {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    @include desktop {
+      font-size: 1.8rem;
+      line-height: 2.7rem;
+    }
+  }
+  
+  @mixin text-body-1 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    @include desktop {
+      font-size: 2rem;
+      line-height: 2.7rem;
+    }
+  }
+  
+  @mixin text-body-2 {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    @include desktop {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+  
+  @mixin text-body-3 {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    @include desktop {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+    }
+  }
+  @mixin text-body-4 {
+    font-size: 1.4rem;
+    line-height: 1.694rem;
+  }
+  @mixin text-body-5 {
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+  }
+  @mixin text-links-medium {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    @include desktop {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
+  }
+  @mixin text-links-small {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    @include desktop {
+      font-size: 1.6rem;
+      line-height: 2.1rem;
+    }
+  }
+  @mixin text-links-x-small {
+    font-size: 1.4rem;
+    line-height: 1.694rem;
+  }
+  

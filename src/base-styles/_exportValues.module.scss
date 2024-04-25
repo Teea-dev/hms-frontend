@@ -1,0 +1,15 @@
+@import "./colors";
+
+// This file export any scss variable i needed in any js file
+
+:export {
+  primary: $primary-color;
+  neutral50: $neutral-grey-50;
+  neutral100: $neutral-grey-100;
+  neutral200: $neutral-grey-200;
+
+  secondary100: $secondary-color-100;
+  secondary500: $secondary-color-500;
+  secondary800: $secondary-color-800;
+  
+}

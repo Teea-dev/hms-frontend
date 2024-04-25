@@ -1,0 +1,72 @@
+@import "src/base-styles/_index.scss";
+
+.wrapper {
+  width: 100%;
+  margin-top: 1.6rem;
+  background-color: $neutral-white;
+  padding: 2.3rem 1.6rem;
+  border-radius: 1.2rem;
+  border: 1px solid #585A60;
+
+  .container {
+    width: 100%;
+    overflow: auto;
+    max-height: 60rem;
+    @include custom-scrollbar(1rem);
+
+    table {
+      min-width: 90rem;
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+
+      th,
+      td {
+        background-color: inherit;
+        white-space: nowrap;
+      }
+
+      th {
+        padding: 2rem 1.6rem;
+        border-bottom: 1px solid #dcdcdc;
+        color: $neutral-grey-200;
+        font-weight: 500;
+        @include text-body-4;
+      }
+
+      thead {
+        background-color: $neutral-white;
+        position: sticky;
+        top: -1px;
+        z-index: 2;
+      }
+
+      tbody {
+        tr{
+          font-weight: 500;
+          @include text-body-3;
+      }
+        tr:nth-child(odd) {
+          background-color: $neutral-grey-100;
+        }
+        tr:nth-child(even) {
+          background-color: $neutral-white;
+        }
+
+       
+
+        tr.emptyRow {
+          height: 20rem;
+          background-color: transparent !important;
+
+          .emptyCell {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}

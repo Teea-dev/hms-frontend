@@ -1,0 +1,42 @@
+@import "src/base-styles/_index.scss";
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 3.2rem 2rem 4.8rem;
+  box-shadow: 0px 8px 16px 0px #2756C30F;
+
+  .searchInputWrapper {
+    flex: 0.5;
+  }
+  .userDetails {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    font-weight: 500;
+    .userInfo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .image {
+        position: relative;
+        width: 4.6rem;
+        height: 4.6rem;
+      }
+      .userName {
+        color: $dark-grey;
+        p:nth-child(1) {
+          font-weight: 500;
+          @include text-body-4;
+        }
+        p:nth-child(2) {
+          font-weight: 400;
+          color: $neutral-grey-200;
+          @include text-body-5;
+        }
+      }
+    }
+  }
+}

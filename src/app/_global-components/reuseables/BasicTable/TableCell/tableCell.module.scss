@@ -1,0 +1,26 @@
+@import "src/base-styles/_index.scss";
+
+.wrapper {
+  &.sticky {
+    position: sticky;
+    right: 0;
+  }
+  .container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: $neutral-black;
+    padding: 2rem 1rem;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-inter);
+
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "src/base-styles/_index.scss";
+
+:global(.ant-btn).wrapper {
+  height: auto !important;
+  border-radius: 0.8rem;
+  padding: 1.4rem 3.2rem;
+  font-weight: 500;
+  @include text-links-small;
+}

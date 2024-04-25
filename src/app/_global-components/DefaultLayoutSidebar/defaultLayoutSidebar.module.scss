@@ -1,0 +1,58 @@
+@import "src/base-styles/_index.scss";
+.wrapper {
+  height: 100vh;
+  background-color: $primary-color;
+  .container {
+    padding: 3.1rem 0.5rem;
+    .logoWrapper {
+      display: inline-block;
+      position: relative;
+      width: 18.8rem;
+      height: 6.9rem;
+    }
+    .navLinks {
+      margin-top: 4.8rem;
+      height: 100%;
+      max-height: calc(100vh - 11rem);
+      overflow-y: auto;
+      position: relative;
+      padding-bottom: 1rem;
+      @include custom-scrollbar;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      .navLinksHighlight {
+        position: absolute;
+        border-radius: 0.6rem;
+        height: 5.6rem;
+        top: 0;
+        left: 0;
+        transform: translateY(-200px);
+        z-index: -1;
+        background-color: #f5b43d26;
+      }
+
+      .navLink {
+        display: flex;
+        padding: 1.6rem;
+        align-items: center;
+        width: 21.6rem;
+
+        gap: 1.6rem;
+        text-decoration: none;
+        color: $grey-100;
+        fill: #898989;
+        font-weight: 500;
+        @include text-body-2;
+
+        &.navLink__active {
+          color: $primary-color;
+          fill: $primary-color;
+          border-radius: 0.6rem;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "./index";
+@import "./layout";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* 
+Note: This piece enable us to use a 10 base system for  our rems value, the default broswer font value is 16px so 62.5% of 16px is 10px. That means 1rem === 10px.
+*/
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html,
+body,
+.app-wrapper {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}

@@ -1,0 +1,29 @@
+@import "src/base-styles/_index.scss";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.8rem;
+  // width: fit-content;
+
+  .label {
+    font-weight: 500;
+    color: $neutral-grey-200;
+    margin-left: 1.4rem;
+    // @include text-links-x-small;
+  }
+  .selectContainer {
+    background-color: inherit;
+    border-radius: inherit;
+
+    :global(.ant-select-selector) {
+      height: 100% !important;
+      align-items: center;
+    }
+
+    :global(.ant-select-selection-item) {
+      font-weight: 500 !important;
+    }
+  }
+}

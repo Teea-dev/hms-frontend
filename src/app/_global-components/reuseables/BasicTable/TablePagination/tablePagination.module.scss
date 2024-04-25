@@ -1,0 +1,70 @@
+@import "src/base-styles/_index.scss";
+
+.wrapper {
+  margin-top: 2.4rem;
+  margin-left: 1.8rem;
+  margin-right: 5.3rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  font-family: var(--font-inter);
+
+  .showingPerPage {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+
+    > p {
+      color: $neutral-black;
+      font-weight: 400;
+      @include text-body-4;
+
+      &:last-child {
+        color: $neutral-grey-200;
+        @include text-body-4
+      }
+    }
+  }
+
+  .navBtns {
+    @include text-heading-5;
+
+    button {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      font-weight: 500;
+      color: $neutral-grey-300;
+      cursor: pointer;
+      font-family: var(--font-inter);
+      user-select: none;
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+      }
+    }
+    .numBtn,
+    .numBtn {
+      padding: 0.8rem 1.4rem;
+      color: $neutral-black;
+
+      &.numBtn:first-child {
+        margin-right: 1rem;
+      }
+
+      &.active {
+        border-radius: 0.8rem;
+        border: 1px solid $primary-color;
+      }
+    }
+
+    .nextBtn,
+    .startBtn {
+      margin: 0 2.2rem;
+      
+    }
+   
+  }
+}

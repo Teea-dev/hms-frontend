@@ -1,0 +1,44 @@
+/**
+-- Description --
+This fuctions take in a px value and return back a vw or vh value base on a fixed dimension
+
+--Parameters Types--
+$pixels: pixels value e.g 5px, 25px, 50px;
+$base-vw: This is a base pixel value which pixels is divided by before multiplying by 100vw E.g let say you pass 25px for $pixels and pass 1440px for $base-vw, then you will get 25px / 14440px which equals 0.017361, now 0.017361 * 100vw will give you 1.7361vw which is a value in vw that relative to 25px but has a base of 1440px.
+Meaning when the screen is at 1440px, 1.7361vw === 25px and when the screen less than 1440px 1.7361vw < 25px and when the screen is greater than 1440px 1.7361vw > 25px.
+Rememeber "VW" is relative to the view width.
+
+
+
+Note: I know this might be alot to take in please bear with me, i'm not really good at explaining stuffs 
+ */
+
+ @function mobile-vw($pixels, $base-vw: $mobile-width) {
+    @return math.div($pixels * 100vw, $base-vw);
+  }
+  
+  @function mobile-vh($pixels, $base-vh: $mobile-height) {
+    @return math.div($pixels * 100vh, $base-vh);
+  }
+  
+  @function desktop-vw($pixels, $base-vw: $desktop-width) {
+    @return math.div($pixels * 100vw, $base-vw);
+  }
+  
+  @function desktop-vh($pixels, $base-vh: $desktop-height) {
+    @return math.div($pixels * 100vh, $base-vh);
+  }
+  
+  @function columns($columns) {
+    @return calc(
+      (#{$columns} * var(--layout-column-width)) +
+        ((#{$columns} - 1) * var(--layout-columns-gap))
+    );
+  }
+  
+  @mixin hover {
+    @media (hover: hover) {
+      @content;
+    }
+  }
+  

@@ -1,0 +1,92 @@
+@import "src/base-styles/_index.scss";
+
+
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  padding: 0.5rem;
+  @include text-body-5;
+  &.completed {
+    background-color: $secondary-color-700;
+    color: #00c566;
+    width: fit-content;
+    @include text-body-5;
+
+  }
+  &.pending {
+    background-color: $secondary-color-300;
+    color: #f5b43d;
+    @include text-body-5;
+    width: fit-content;
+
+
+  }
+  &.review {
+    background-color: $neutral-grey-200;
+    color: #ffffff;
+    width: fit-content;
+
+    @include text-body-5;
+
+  }
+  &.declined {
+    background-color: $secondary-color-400;
+    color: #ff784b;
+    width: fit-content;
+
+    @include text-body-5;
+
+  }
+}
+.sender,
+.celebrity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seeMorePopoverContainer {
+  width: 24rem;
+
+  :global(.ant-popover-inner) {
+    padding: 0 !important;
+  }
+
+  .seeMorePopoverContent {
+    display: flex;
+    flex-direction: column;
+
+    * {
+      padding: 1.6rem;
+      background-color: $neutral-white;
+      cursor: pointer;
+      font-weight: 500;
+      font-family: var(--font-inter);
+      @include text-body-4;
+
+      &:hover {
+        background-color: $neutral-grey-100;
+      }
+    }
+
+    a {
+      color: $neutral-black !important;
+      border-bottom: 1px solid $neutral-grey-200;
+      border-radius: 0.8rem 0.8rem 0px 0px;
+    }
+
+    button {
+      display: inline-block;
+      border: none;
+      text-align: left;
+      border-radius: 0rem 0rem 0.8rem 0.8rem;
+    }
+  }
+}
+
+.seeMoreIcon {
+  cursor: pointer;
+}

@@ -1,0 +1,47 @@
+$breakpoints: (
+  "xs": 0,
+  "sm": 425px,
+  "md": 800px,
+  "lg": 1024px,
+  "xl": 1440px,
+);
+
+/* 
+-- Description --
+This is a mixin function that accept a breakpoint value "$point" and return a media query with a max-width, typically used for mobile break points
+
+--Parameters Types--
+$point: A value in px with a default of 800px
+*/
+@mixin mobile($point: map-get($breakpoints, "md")) {
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+/* 
+-- Description --
+This is a mixin function that accept a breakpoint value "$point" and return a media query with a min-width, typically used for desktop break points
+
+--Parameters Types--
+$point: A value in px with a default of 1440px;
+*/
+@mixin desktop($point: map-get($breakpoints, "md")) {
+  @media (min-width: $point) {
+    @content;
+  }
+}
+
+/* 
+-- Description --
+This is a mixin function that clamps a media query between extreme points. it accepts a $minScreen and $maxScreen, so if the viewport size is greater than the $minScreen but less than the $maxScreen then this media query will apply
+
+--Parameters Types--
+$minScreen: A value in px, minimum screen size;
+$maxScreen: A value in px, maximum screen size;
+*/
+@mixin clamp-screen($minScreen, $maxScreen) {
+  @media only screen and (max-width: $maxScreen) and (min-width: $minScreen) {
+    @content;
+  }
+}
