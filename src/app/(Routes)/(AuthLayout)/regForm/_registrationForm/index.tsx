@@ -168,10 +168,11 @@ function RegistrationForm() {
             </div>
           </div>
 
+        </form>
           <Button type="primary" className={s.submitBtn} themeType="primary">
             <p>Submit</p>
           </Button>
-        </form>
+         
       </div>
     </div>
   );
