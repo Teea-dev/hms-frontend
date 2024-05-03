@@ -12,7 +12,8 @@ This Components extends Antd Default SelectBox for proper Design Customization
 
 interface PropsTypes extends ComponentPropsWithRef<typeof AntdSelect> {
     wrapperClassname?: string,
-    label?: React.ReactNode
+    label?: React.ReactNode,
+    name?: string
 }
 
 
@@ -20,12 +21,14 @@ function SelectField({
     className,
     wrapperClassname = '',
     label = null,
+    name,
     ...rest
 }: PropsTypes) {
 
     return (
         <div className={cn(s.wrapper, wrapperClassname)}>
             {label && <p className={s.label}>{label}:</p>}
+            
             <AntdSelect
                 bordered={false}
                 className={cn(s.selectContainer, className)}

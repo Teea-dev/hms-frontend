@@ -10,9 +10,8 @@ import {
   getPaginationRowModel,
 } from "@tanstack/react-table";
 import { TableMetadata } from "./types";
-// import TablePagination from "./TablePagination";
-// import { TableIcon } from "../../icons";
 import cn from "clsx";
+
 interface PropsTypes {
   data: Array<any>;
   columns: any;
@@ -25,6 +24,7 @@ interface PropsTypes {
   getTableMetaData?: React.MutableRefObject<
     (tableMetaData: TableMetadata<unknown>) => void
   > | null;
+  onRowClick?: (rowData: any) => void; // New prop for row click
 }
 
 function BasicTable({
@@ -37,6 +37,7 @@ function BasicTable({
   setGlobalFiltering = null,
   getTableMetaData = null,
   bordered = false,
+  onRowClick, // New prop for row click
 }: PropsTypes) {
   const [columnFilters, setColumnFilters] = useState<any>([]);
 
@@ -71,9 +72,15 @@ function BasicTable({
     getTableMetaData.current(tableMetaData);
   }, [getTableMetaData, table]);
 
+  const handleRowClick = (rowData: any) => {
+    if (onRowClick) {
+      onRowClick(rowData);
+    }
+  };
+
   return (
     <>
-      <div className={cn( s.wrapper, wrapperClassName, bordered && s.withBorder)}>
+      <div className={cn(s.wrapper, wrapperClassName, bordered && s.withBorder)}>
         <div className={s.container}>
           <table width={"100%"}>
             <thead>
@@ -94,7 +101,7 @@ function BasicTable({
             <tbody>
               {table.getRowModel().rows.length > 0 ? (
                 table.getRowModel().rows.map((row) => (
-                  <tr key={row.id}>
+                  <tr key={row.id} onClick={() => handleRowClick(row.original)}> {/* Added onClick handler */}
                     {row.getVisibleCells().map((cell) => (
                       <Fragment key={cell.id}>
                         {flexRender(
@@ -109,7 +116,6 @@ function BasicTable({
                 <tr className={s.emptyRow}>
                   <td className={s.emptyCell}>
                     <div className={s.emptyContent}>
-                      {/* <TableIcon width={68} height={68} inheritColor /> */}
                       <p>No data was found</p>
                     </div>
                   </td>
@@ -119,9 +125,8 @@ function BasicTable({
           </table>
         </div>
       </div>
-      {/* <TablePagination table={table} /> */}
     </>
   );
 }
 
-export default  memo (BasicTable);
+export default memo(BasicTable);

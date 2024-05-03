@@ -4,3 +4,4 @@ export {default as AllocationIcon} from './allocation';
 export {default as MoreHorizontalIcon} from './moreHorizontal';
 export {default as ArrowDownIcon} from './arrowDown';
 export {default as AvatarIcon} from './avatar';
+export {default as UploadIcon} from './upload';

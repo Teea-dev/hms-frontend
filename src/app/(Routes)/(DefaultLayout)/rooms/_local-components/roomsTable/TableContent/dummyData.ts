@@ -1,12 +1,12 @@
 import { CSSProperties } from "@ant-design/cssinjs/lib/hooks/useStyleRegister";
 
 export interface DummyDataType {
-  roomNumber: string;
-  roomCapacity: number;
-  noOfOccupants: number;
-  status: string;
-  requestId:number;
-  viewMore: {
+  roomNumber?: string;
+  roomCapacity?: number;
+  noOfOccupants?: number;
+  status?: string;
+  requestId?:number;
+  viewMore?: {
     url: string;
     pinStyles: CSSProperties;
   };

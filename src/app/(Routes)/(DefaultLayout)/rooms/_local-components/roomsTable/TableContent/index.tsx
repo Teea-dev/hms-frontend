@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import dummyData, { DummyDataType } from "./dummyData";
 import BasicTable from "@components/app/_global-components/reuseables/BasicTable";
@@ -13,8 +13,13 @@ import { MoreHorizontalIcon } from "@components/app/_global-components/icons";
 import { Skeleton } from "antd";
 import { nanoid } from "nanoid";
 import SelectField from "@components/app/_global-components/reuseables/form/selectField";
-
+import RoomsDetails from "../../../roomsDetails";
 function RoomsTableContent() {
+  const [selectedRow, setSelectedRow] = useState<DummyDataType | null>(null);
+
+  const handleRowClick = (row: DummyDataType) => {
+    setSelectedRow(row);
+  };
   const SeeMorePopoverContent = useMemo(() => {
     return function Component(data: any) {
       return (
@@ -32,10 +37,7 @@ function RoomsTableContent() {
         accessorKey: "roomNumber",
         id: nanoid(),
         cell: (info) => (
-          <TableCell
-            isLink
-            href={`/reviewallocation/${info.row.original.requestId}`}
-          >
+          <TableCell isLink href={`/roomsDetails/`}>
             <Skeleton active loading={false} paragraph={false}>
               {info.getValue<any>()}
             </Skeleton>
@@ -62,10 +64,7 @@ function RoomsTableContent() {
         accessorKey: "noOfOccupants",
         id: nanoid(),
         cell: (info) => (
-          <TableCell
-            isLink
-            href={`/reviewallocation/${info.row.original.requestId}`}
-          >
+          <TableCell isLink href={`/rooms/roomsDetails/`}>
             <Skeleton active loading={false} paragraph={false}>
               <div className={s.sender}>{info.getValue<string>()}</div>
             </Skeleton>
@@ -110,7 +109,7 @@ function RoomsTableContent() {
         }),
 
         cell: (info) => (
-          <TableCell isLink  href={`/bookings/${info.row.original.requestId}`}>
+          <TableCell isLink href={`/bookings/${info.row.original.requestId}`}>
             <Skeleton active loading={false} paragraph={false}>
               <PopoverClientSide
                 content={<SeeMorePopoverContent data={info.getValue<any>()} />}
@@ -177,7 +176,12 @@ function RoomsTableContent() {
           />
         </div>
       </div>
-      <BasicTable data={dummyData} columns={columns} />
+      <BasicTable
+        data={dummyData}
+        columns={columns}
+        onRowClick={handleRowClick}
+      />
+      {selectedRow && <RoomsDetails  />}
     </>
   );
 }
