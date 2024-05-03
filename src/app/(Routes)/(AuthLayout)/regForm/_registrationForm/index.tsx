@@ -174,6 +174,7 @@ function RegistrationForm() {
           </Button>
          
       </div>
+        
     </div>
   );
 }

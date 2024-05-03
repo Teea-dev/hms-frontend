@@ -44,25 +44,25 @@
       }
 
       .selectWrapper {
-        .select {
+        .select { 
           width: 100%;
           background-color: #f4f4f5;
         }
       }
     }
+    .submitBtn {
+     
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      color: white;
+      margin-top: 2rem; // Adjust margin for mobile view
+      margin-bottom: 2rem; // Adjust margin for mobile view
+      @include text-links-medium;
+    }
   }
 
 
-  .submitBtn {
-   
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color: white;
-    margin-top: 2rem; // Adjust margin for mobile view
-    margin-bottom: 2rem; // Adjust margin for mobile view
-    @include text-links-medium;
-  }
 
 
 
@@ -94,12 +94,12 @@
           }
         }
       }
+      .submitBtn {
+        // width: fit-content;
+        margin-top: 4rem; // Adjust margin for desktop view
+        margin-bottom: 4rem; // Adjust margin for desktop view
+      }
     }
 
-    .submitBtn {
-      width: fit-content;
-      margin-top: 4rem; // Adjust margin for desktop view
-      margin-bottom: 4rem; // Adjust margin for desktop view
-    }
   }
 }
