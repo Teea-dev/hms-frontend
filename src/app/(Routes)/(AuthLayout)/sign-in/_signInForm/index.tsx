@@ -93,8 +93,9 @@ function SignInForm() {
       </div>
 
       <div className={s.footerInfo}>
-        Not a hall warden?
-        <Link href={"#"}>Sign in as potter</Link> 
+        Not a hall warden ?
+
+        <Link href={"#"}> Sign in as potter</Link> 
       </div>
     </div>
   );

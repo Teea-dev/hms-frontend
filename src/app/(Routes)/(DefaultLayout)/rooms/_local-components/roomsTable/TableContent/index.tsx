@@ -37,7 +37,7 @@ function RoomsTableContent() {
         accessorKey: "roomNumber",
         id: nanoid(),
         cell: (info) => (
-          <TableCell isLink href={`/roomsDetails/`}>
+          <TableCell isLink href={`/rooms/roomsDetails/`}>
             <Skeleton active loading={false} paragraph={false}>
               {info.getValue<any>()}
             </Skeleton>

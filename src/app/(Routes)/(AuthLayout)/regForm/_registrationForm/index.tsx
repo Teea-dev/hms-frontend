@@ -170,7 +170,7 @@ function RegistrationForm() {
 
         </form>
           <Button type="primary" className={s.submitBtn} themeType="primary">
-            <p>Submit</p>
+           <span> Submit</span>
           </Button>
          
       </div>

@@ -5,23 +5,23 @@
   padding: 3rem; // Adjust padding for mobile view
 
   .schoolLogo {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
   }
 
   .container {
     background-color: white;
     padding: 2rem; // Adjust padding for mobile view
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     h1 {
       display: flex;
       justify-content: center;
       margin-bottom: 2rem; // Adjust margin for mobile view
       @include text-heading-4; // Use appropriate font size
     }
-    p{
-        text-align: center;
-        margin-bottom: 4.8rem;
+    p {
+      text-align: center;
+      margin-bottom: 4.8rem;
     }
 
     .inputContainer {
@@ -44,14 +44,13 @@
       }
 
       .selectWrapper {
-        .select { 
+        .select {
           width: 100%;
           background-color: #f4f4f5;
         }
       }
     }
     .submitBtn {
-     
       display: flex;
       justify-content: center;
       width: 100%;
@@ -62,17 +61,13 @@
     }
   }
 
-
-
-
-
   @include desktop {
     padding: 8rem 30rem; // Adjust padding for desktop view
 
     .container {
       padding: 4rem;
-    border-radius: .8rem;
-    // Adjust padding for desktop view
+      border-radius: 0.8rem;
+      // Adjust padding for desktop view
 
       h1 {
         @include text-heading-4; // Use appropriate font size for desktop view
@@ -80,9 +75,9 @@
 
       .inputContainer {
         .names {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
           margin-bottom: 2rem; // Adjust margin for desktop view
         }
 
@@ -100,6 +95,5 @@
         margin-bottom: 4rem; // Adjust margin for desktop view
       }
     }
-
   }
 }
